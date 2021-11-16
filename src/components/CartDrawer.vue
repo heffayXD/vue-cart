@@ -17,15 +17,15 @@
 <script>
 export default {
   name: 'CartDrawer',
+  data () {
+    return { isOpen: false }
+  },
   methods: {
     closeDrawer () {
-      this.$store.dispatch({ type: 'closeDrawer' })
+      this.isOpen = false
     }
   },
   computed: {
-    isOpen () {
-      return this.$store.state.showDrawer
-    },
     products () {
       return this.$store.state.products
     },
@@ -38,7 +38,7 @@ export default {
   },
   watch: {
     productCount () {
-      this.$store.dispatch({ type: 'openDrawer' })
+      this.isOpen = true
     }
   }
 }

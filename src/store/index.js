@@ -3,7 +3,6 @@ import { formatCurrency } from '../helpers/numbers'
 
 export default createStore({
   state: {
-    showDrawer: false,
     products: []
   },
   getters: {
@@ -19,12 +18,6 @@ export default createStore({
     },
     clearCart (state) {
       state.products = []
-    },
-    openDrawer (state) {
-      state.showDrawer = true
-    },
-    closeDrawer (state) {
-      state.showDrawer = false
     }
   },
   actions: {
@@ -33,12 +26,6 @@ export default createStore({
     },
     clearCart ({ commit }) {
       commit('clearCart')
-    },
-    openDrawer ({ commit }) {
-      commit('openDrawer')
-    },
-    closeDrawer ({ commit }) {
-      commit('closeDrawer')
     }
   },
   modules: {
